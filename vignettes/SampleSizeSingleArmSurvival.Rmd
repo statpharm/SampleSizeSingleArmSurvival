@@ -24,9 +24,10 @@ This vignette demonstrates how to use the `calcSampleSizeArcsine()` function to 
 
 To install the package, you can use:
 
-```{r}
+```{r, results = "hide", message = FALSE, warning = FALSE}
 # From source
 devtools::install_github("statpharm/SampleSizeSingleArmSurvival")
+
 ```
 
 # Usage
@@ -52,8 +53,8 @@ custom_sample <- calcSampleSizeArcsine(
   S0 = 0.80,
   S1 = 0.85,
   accrual = 36,
-  followup = 12,
-  timePoint = 24
+  followup = 24,
+  timePoint = 18
 )
 custom_sample
 ```
