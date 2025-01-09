@@ -1,26 +1,35 @@
 #' Calculate Sample Size Using Arcsine Transformation
 #'
 #' This function calculates the required sample size for single-arm survival studies
-#' based on the arcsine transformation method. It accounts for uniform accrual and
-#' exponential survival, including numeric integration for time points exceeding the follow-up period.
+#' based on the arcsine transformation method. It accounts for uniform accrual
+#' and exponential survival assumptions, including numeric integration for time
+#' points that exceed the follow-up period.
 #'
-#' @param S0 Numeric. Survival probability under the null hypothesis (strictly between 0 and 1).
-#' @param S1 Numeric. Survival probability under the alternative hypothesis (strictly between 0 and 1).
-#' @param alpha Numeric. Type I error rate for one-sided test. Default is 0.05.
-#' @param power Numeric. Desired power of the test (1 - beta). Default is 0.80.
-#' @param accrual Numeric. Duration of accrual in months. Default is 24.
-#' @param followup Numeric. Additional follow-up duration in months. Default is 24.
-#' @param timePoint Numeric. Time of interest in months. Default is 18.
-#' @param steps Integer. Number of steps for numeric integration if timePoint exceeds follow-up. Default is 10000.
+#' @param S0 Numeric. Survival probability under the null hypothesis (must be strictly between 0 and 1).
+#' @param S1 Numeric. Survival probability under the alternative hypothesis (must be strictly between 0 and 1).
+#' @param alpha Numeric. The one-sided Type I error rate. Default is 0.05.
+#' @param power Numeric. Desired statistical power of the test (1 - beta). Default is 0.80.
+#' @param accrual Numeric. Duration of the accrual period in months. Default is 24.
+#' @param followup Numeric. Additional follow-up duration in months after accrual. Default is 24.
+#' @param timePoint Numeric. Time of interest in months for evaluating survival probabilities. Default is 18.
+#' @param steps Integer. Number of steps for numeric integration if \code{timePoint} exceeds follow-up duration. Default is 10,000.
 #'
-#' @return Integer. The required sample size (rounded up to the nearest whole number).
+#' @return Integer. The required sample size, rounded up to the nearest whole number.
 #'
 #' @examples
 #' # Calculate sample size for typical survival probabilities
 #' calcSampleSizeArcsine(S0 = 0.90, S1 = 0.96)
 #'
-#' # Adjusting for lower survival probabilities and longer accrual
-#' calcSampleSizeArcsine(S0 = 0.80, S1 = 0.85, accrual = 36, followup = 12, timePoint = 24)
+#' # Adjusting for lower survival probabilities and extended accrual
+#' calcSampleSizeArcsine(
+#'   S0 = 0.80,
+#'   S1 = 0.85,
+#'   accrual = 36,
+#'   followup = 12,
+#'   timePoint = 24
+#' )
+#'
+#' @importFrom stats qnorm uniroot
 #' @export
 
 ###############################################################################
