@@ -20,16 +20,6 @@ The `SampleSizeSingleArmSurvival` package provides a method for calculating samp
 
 This vignette demonstrates how to use the `calcSampleSizeArcsine()` function to calculate the required sample size based on specific survival probabilities, time points, and study designs.
 
-# Installation
-
-To install the package, you can use:
-
-```{r, results = "hide", message = FALSE, warning = FALSE}
-# From source
-devtools::install_github("statpharm/SampleSizeSingleArmSurvival")
-
-```
-
 # Usage
 
 ## Basic Example
