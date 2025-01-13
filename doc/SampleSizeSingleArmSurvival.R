@@ -4,11 +4,6 @@ knitr::opts_chunk$set(
   comment = "#>"
 )
 
-## ---- results = "hide", message = FALSE, warning = FALSE----------------------
-# From source
-devtools::install_github("statpharm/SampleSizeSingleArmSurvival")
-
-
 ## -----------------------------------------------------------------------------
 library(SampleSizeSingleArmSurvival)
 required_sample <- calcSampleSizeArcsine(S0 = 0.90, S1 = 0.96)
