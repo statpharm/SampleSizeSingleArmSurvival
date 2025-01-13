@@ -4,10 +4,7 @@ Title: Calculate Sample Size for Single-Arm Survival Studies
 Version: 0.1.0
 Authors@R: 
     person("Mohamed", "Kamal", email = "mohamedkamalhospital@gmail.com", role = c("aut", "cre"))
-Description: Provides methods to calculate sample size for single-arm survival 
-    studies using the arcsine transformation, incorporating uniform accrual 
-    and exponential survival assumptions. Includes functionality for 
-    detailed numerical integration and simulation.
+Description: Provides methods to calculate sample size for single-arm survival studies using the arcsine transformation, incorporating uniform accrual and exponential survival assumptions. Includes functionality for detailed numerical integration and simulation. This method is based on Nagashima et al. (2021) <doi:10.1002/pst.2090>.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
